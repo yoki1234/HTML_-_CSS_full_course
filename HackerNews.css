@@ -1,0 +1,101 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #f6f6ef;
+  font-family:verdana, sans-serif;
+}
+
+nav {
+  background-color: #ff6600;
+  color: white;
+  padding: 2px 6px 2px 2px;
+  color:black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  width: 18px;
+  height: 18px;
+  border: 1px solid white;
+}
+
+.site-title{
+  font-weight: 600;
+  font-size: 10pt;
+}
+
+.nav-links ,.login{
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.login:hover{
+  text-decoration: underline;
+}
+
+.nav-links{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 0;
+}
+
+.nav-links li{
+  list-style: none;
+}
+
+.nav-links li:hover{
+  text-decoration: underline;
+}
+
+
+
+.nav-left{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-links-container{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-left: 5px;
+  margin-right: 5px;
+  gap: 5px;
+}
+
+.news-list{
+  list-style: none;      /* removes default bullets/numbers */
+  counter-reset: my-counter;
+  padding-left: 0;
+}
+
+.news-list li{
+  counter-increment: my-counter;
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 8px;
+}
+
+.news-list li::before {
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  color: rgb(78, 72, 72);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+}
