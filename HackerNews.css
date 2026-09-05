@@ -5,11 +5,22 @@
 }
 
 body{
-  background-color: #f6f6ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #ffff;
+  padding-bottom: 10px;
   font-family:verdana, sans-serif;
 }
 
+.container{
+  width: 90%;
+  background-color: #f6f6ef;
+}
+
 nav {
+  width: 100%;
   background-color: #ff6600;
   color: white;
   padding: 2px 6px 2px 2px;
@@ -73,6 +84,16 @@ nav {
   gap: 5px;
 }
 
+.news-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 25px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #ff6600;
+}
+
 .news-list{
   list-style: none;      /* removes default bullets/numbers */
   counter-reset: my-counter;
@@ -87,15 +108,98 @@ nav {
 }
 
 .news-list li::before {
-  content: counter(my-counter);
+  content: counter(my-counter) ". ";
   position: absolute;
-  left: 0;
-  color: rgb(78, 72, 72);
+  left: 8px;
+  color: #828282;
   width: 20px;
   height: 20px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
+  font-size: 11pt;
+}
+
+.news-item{
+  display: flex;
+  position: absolute;
+  top:20px;
+  gap: 5px;
+  font-size: 11pt;
+}
+
+.upvote{
+  width: 13px;
+  height: 13px;
+  position: relative;
+  top: 3px;
+}
+
+.news-content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  cursor: auto;
+}
+.news-title span{
+  color: #828282;
+  font-size: 8pt;
+}
+
+.news-details{
+  font-size: 9pt;
+  color: #828282;
+}
+
+.news-title span, .news-details span{
+  cursor: pointer;
+}
+
+.news-title span:hover, .news-details span:hover{
+  text-decoration: underline;
+}
+
+.load-more{
+  color: #000;
+  font-size: 10pt;
+  cursor: pointer;
+  margin-left: 50px;
+  text-transform: capitalize;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding-bottom: 15px;
+  flex-wrap: wrap;
+}
+.footer-links{
+  font-size: 8pt;
+  color: #000;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 10px;
+  gap: 5px;
+}
+
+.footer-links span{
+  cursor: pointer;
+}
+
+.footer-links span:hover{
+  text-decoration: underline;
+}
+.footer-search{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9pt;
+  color: #828282;
+}
+.footer-search input{
+  width: 65%;
+  font-size: 10pt;
 }
